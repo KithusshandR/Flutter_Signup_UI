@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:singup_page/HomePage.dart';
 import 'package:singup_page/main.dart';
 
 
@@ -114,7 +115,7 @@ class signup extends StatelessWidget {
                     child: RaisedButton(
                       onPressed: () {
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (ctx) => WelcomeScreen()));
+                          MaterialPageRoute(builder: (ctx) => HomePage()));
                       },
                       child: Text(
                         'Next Step',

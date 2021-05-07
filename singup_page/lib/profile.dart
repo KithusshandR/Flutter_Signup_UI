@@ -1,11 +1,44 @@
 import 'package:flutter/material.dart';
 
+final List<Map> details = [
+
+   {
+    "name": "Sharmilan",
+    "email": "ssharmilan15@gmail.com",
+    "image": "assets/images/bg.png",
+
+  },  {
+    "name": "Sriram",
+    "email": "Sri@email.com",
+    "image": "assets/images/bg.png",
+
+  },  {
+    "name": "Chumugan",
+    "email": "Chumugan@email.com",
+    "image": "assets/images/bg.png",
+
+  },  {
+    "name": "Bagavan",
+    "email": "Bagav@email.com",
+    "image": "assets/images/bg.png",
+
+  },  {
+    "name": "Kithusshand",
+    "email": "kithu@email.com",
+    "image": "assets/images/bg.png",
+
+  },
+];
+
 class profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return ListView.builder(
-      itemCount: 3,
+   return SingleChildScrollView(
+     child:  Expanded(
+       child:ListView.builder(
+         shrinkWrap: true,
+      itemCount: details.length,
       itemBuilder: (context,index){
    
     return  Card(
@@ -23,7 +56,7 @@ class profile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(60/2),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: ExactAssetImage("assets/images/bg.png"),
+                    image: ExactAssetImage(details[index]['image']),
                   )
                 ),
               ),
@@ -33,9 +66,9 @@ class profile extends StatelessWidget {
                 children: <Widget>[
                   SizedBox(
                     width: MediaQuery.of(context).size.width-140,
-                    child: Text("Pradip Debnath",style: TextStyle(fontSize: 17),)),
+                    child: Text(details[index]['name'],style: TextStyle(fontSize: 17),)),
                   SizedBox(height: 10,),
-                  Text("itzprradip@gmail.co",style: TextStyle(color: Colors.grey),)
+                  Text(details[index]['email'],style: TextStyle(color: Colors.grey),)
                 ],
               )
             ],
@@ -45,7 +78,7 @@ class profile extends StatelessWidget {
     
     );
       }
-   );
+   )));
      
 }
 
